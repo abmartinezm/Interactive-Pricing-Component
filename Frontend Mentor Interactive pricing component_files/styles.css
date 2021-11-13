@@ -1,0 +1,59 @@
+/*## Colors*/
+/*### Primary*/
+/*(Full Slider Bar)*/
+/*(Slider Backround)*/
+/*(Discount Background)*/
+/*(Discount Text)*/
+/*(CTA Text)*/
+/*### Neutral*/
+/*(Pricing Component Background)*/
+/*(Main Background)*/
+/*(Empty Slider Bar)*/
+/*(Toggle Background)*/
+/* (Text)*/
+/*(Text & CTA Background)*/
+body {
+  font-family: "Manrope", sans-serif;
+}
+@media screen and (max-width: 500px) {
+  body .container {
+    width: 88vw;
+    height: auto;
+    padding: 6vw;
+  }
+  body .container header .head-traffic {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 10vh;
+    margin-top: 8vh;
+    background-image: url("../images/pattern-circles.svg");
+    background-position: center;
+    background-size: 20%;
+    background-repeat: repeat;
+  }
+  body .container header .head-traffic .title {
+    font-size: 20px;
+    text-align: center;
+  }
+  body .container header .head-traffic .subtitle {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    color: var(#858fad);
+  }
+  body .container main label {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

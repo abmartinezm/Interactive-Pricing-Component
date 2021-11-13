@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <div class="head-traffic">
+        <h1 class="title">Simple, traffic-based pricing</h1>
+        <h2 class="subtitle">Sign-up for our 30-day trial. No credit card required.</h2>
+      </div>
+    </header>
+
+    <main>
+      <label id="pageviews"><span id="output"></span> <span class="thousands">K</span> Pageviews </label>
+     
+      <div class="slidecontainer">
+       
+        <!-- <input type="range" min="10000" max="1000000" value="10" class="slider" id="range"> -->
+
+        <input id="price__range" class="slider"  type="range" min="1" max="5" value="3" step="1">
+       
+      </div>
+
+      <div class="output">
+        <p>&dollar;</p>
+        <output id="price">0.00</output><span class="month" id="timespan">/month</span>
+
+      </div>
+
+      <div class="billing">
+        <p class="m-billing" >Monthly Billing</p>
+        <label class="switch">
+          <input type="checkbox" id="togBtn">
+          <div class="slider round" id="yearly-billing"></div>
+          </label>
+        <p class="y-billing" id="monthly-billing" >Yearly Billing <span>-25% discount</span> </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="extra-info">
+        <div class="extras">
+          <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Unlimited websites</p>
+        <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> 100% data ownership</p>
+        <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Email reports</p>
+        </div>
+  
+        <div class="btn">
+          <button>Start my trial</button>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Coded by <a href="https://github.com/abmartinezm" target="_blank">Abraham Martinez Marquez</a>.
+      </div>
+    </footer>
+
+  </div>
+
+ <script src="main.js"></script>
+</body>
+
+</html>
