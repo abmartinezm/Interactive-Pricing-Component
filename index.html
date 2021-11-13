@@ -38,50 +38,56 @@
       </div>
     </header>
 
-    <main>
-      <label id="pageviews"><span id="output"></span> <span class="thousands">K</span> Pageviews </label>
-     
-      <div class="slidecontainer">
+    <div class="content">
+      <main>
+        <label id="view"><span ></span> <span class="thousands">K</span> Pageviews </label>
        
-        <!-- <input type="range" min="10000" max="1000000" value="10" class="slider" id="range"> -->
-
-        <input id="price__range" class="slider"  type="range" min="1" max="5" value="3" step="1">
-       
-      </div>
-
-      <div class="output">
-        <p>&dollar;</p>
-        <output id="price">0.00</output><span class="month" id="timespan">/month</span>
-
-      </div>
-
-      <div class="billing">
-        <p class="m-billing" >Monthly Billing</p>
-        <label class="switch">
-          <input type="checkbox" id="togBtn">
-          <div class="slider round" id="yearly-billing"></div>
-          </label>
-        <p class="y-billing" id="monthly-billing" >Yearly Billing <span>-25% discount</span> </p>
-      </div>
-    </main>
-
-    <footer>
-      <div class="extra-info">
-        <div class="extras">
-          <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Unlimited websites</p>
-        <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> 100% data ownership</p>
-        <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Email reports</p>
+        <div class="slidecontainer">
+         
+          <!-- <input type="range" min="10000" max="1000000" value="10" class="slider" id="range"> -->
+  
+          <!-- <input id="price__range" class="slider"  type="range" min="1" max="5" value="3" step="1"> -->
+  
+          <input type="range" name="pricing-range"
+               min="20" max="100" value="50" step="20"
+              id="pricing-range" class="slider">
+         
         </div>
   
-        <div class="btn">
-          <button>Start my trial</button>
+        <div class="output">
+          <p>&dollar;</p>
+          <output id="pricing__permonth-number">0.00</output><span class="month" id="timespan">/month</span>
+  
         </div>
-      </div>
-
-      <div class="attribution">
-        Coded by <a href="https://github.com/abmartinezm" target="_blank">Abraham Martinez Marquez</a>.
-      </div>
-    </footer>
+  
+        <div class="billing">
+          <p class="m-billing" >Monthly Billing</p>
+          <label class="switch">
+            <input type="checkbox" id="togBtn">
+            <div class="slider round" id="checkbox"></div>
+            </label>
+          <p class="y-billing" id="monthly-billing" >Yearly Billing <span class="dsc">-25% discount</span> </p>
+        </div>
+      </main>
+  
+      <footer>
+        <div class="extra-info">
+          <div class="extras">
+            <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Unlimited websites</p>
+          <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> 100% data ownership</p>
+          <p> <svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Email reports</p>
+          </div>
+    
+          <div class="btn">
+            <button class="btn-submit" type="submit">Start my trial</button>
+          </div>
+        </div>
+  
+        <div class="attribution">
+          Coded by <a href="https://github.com/abmartinezm" target="_blank">Abraham Martinez Marquez</a>.
+        </div>
+      </footer>
+    </div>
 
   </div>
 

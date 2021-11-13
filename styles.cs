@@ -71,15 +71,14 @@ body .content {
 body .content main {
   /* The slider itself */
 }
-body .content main #view {
-  width: 35%;
+body .content main label {
+  width: 100%;
   height: auto;
   margin: 0 auto;
   display: flex;
-  justify-content: left;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   text-transform: uppercase;
-  float: left;
   margin-bottom: 5vh;
   font-size: 13px;
   color: var(--Grayish-Blue);
@@ -109,10 +108,6 @@ body .content main .slider::-webkit-slider-thumb {
   border-radius: 50%;
   border: none;
   background: var(--Strong-Cyan);
-  background-image: url("../images/icon-slider.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
   cursor: pointer;
 }
 body .content main .slider::-moz-range-thumb {
@@ -127,12 +122,6 @@ body .content main .slider::-moz-range-thumb {
   cursor: pointer;
   box-shadow: 0 6px 15px #10d5c2;
 }
-body .content main input::-webkit-slider-thumb:active {
-  background-color: var(--Soft-Cyan);
-}
-body .content main input::-moz-range-thumb:active {
-  background-color: var(--Soft-Cyan);
-}
 body .content main input[type=range]::-moz-range-progress {
   height: 8px;
   background-color: var(--Strong-Cyan);
@@ -144,17 +133,16 @@ body .content main input[type=range]::-ms-fill-lower {
   border-radius: 50%;
 }
 body .content main .output {
-  width: 70%;
+  width: 60%;
   float: right;
   margin-top: -13vh;
   height: auto;
   display: flex;
   position: relative;
   align-items: center;
-  margin-right: 5vw;
 }
 body .content main .output output {
-  width: 100%;
+  width: 60%;
   position: absolute;
   right: 0;
   height: auto;
@@ -165,7 +153,7 @@ body .content main .output output {
   font-weight: 700;
 }
 body .content main .output span {
-  width: 15%;
+  width: 50%;
   position: absolute;
   right: 0;
 }
@@ -175,7 +163,7 @@ body .content main .output p {
   font-weight: 700;
   margin-left: 28vw;
   visibility: hidden;
-  color: red;
+  color: transparent;
 }
 body .content main .month {
   font-size: 13px;
@@ -296,7 +284,7 @@ body .content footer .extra-info .btn button {
   cursor: pointer;
   margin-bottom: 10vh;
 }
-@media (min-width: 570px) and (max-width: 1600px) {
+@media (min-width: 501px) and (max-width: 1600px) {
   body .container {
     width: 515px;
     margin: 0 auto;
@@ -313,69 +301,61 @@ body .content footer .extra-info .btn button {
   body .container header .title {
     margin-top: 3vh;
   }
-  body .container .content main {
+  body .container main {
     width: 100%;
     height: auto;
   }
-  body .container .content main #view {
-    margin-top: 0;
-    width: 35%;
+  body .container main label {
+    width: 15%;
     float: left;
     text-align: left;
   }
-  body .container .content main .output output {
+  body .container main .output output {
     width: auto;
     right: 4vw;
   }
-  body .container .content main .output .month {
+  body .container main .output .month {
     width: auto;
     right: 0;
   }
-  body .container .content .billing {
-    width: 85%;
+  body .container main .billing {
+    width: 35%;
   }
-  body .container .content footer .extra-info {
+  body .container footer .extra-info {
     width: 100%;
     display: flex;
   }
-  body .container .content footer .extra-info p {
-    width: 120%;
+  body .container footer .extra-info p {
+    width: 150%;
     text-align: left;
   }
-  body .container .content footer .extra-info p svg {
+  body .container footer .extra-info p svg {
     margin-right: 5%;
   }
-  body .container .content footer .btn {
-    width: auto;
+  body .container footer .btn {
+    width: 50%;
     margin-right: 0%;
-    font-size: 13px;
   }
-  body .container .content footer .btn button {
+  body .container footer .btn button {
     margin-right: 0%;
-    width: 160px;
+    width: 40%;
   }
 }
 @media screen and (max-width: 1660px) {
   body .container main .billing {
     width: 60%;
   }
-  body .container main .billing .dsc.discount {
-    background-color: #ffc8a3;
-  }
 }
 @media screen and (max-width: 1160px) {
-  body .container .content main label {
+  body .container main label {
     width: 15%;
     margin-left: 2vw;
   }
-  body .container .content main .output {
+  body .container main .output p {
     margin-right: 2vw;
   }
-  body .container .content main .output .month {
-    margin-right: -2vw;
-  }
-  body .container .content main .billing {
-    width: 90%;
+  body .container main .billing {
+    width: 50%;
   }
 }
 @media screen and (max-width: 955px) {
@@ -394,18 +374,18 @@ body .content footer .extra-info .btn button {
   body .container header .head-traffi .subtitle {
     width: 60%;
   }
-  body .container .content main label {
+  body .container main label {
     width: 15%;
     margin-left: 6vw;
   }
-  body .container .content main .output output {
-    margin-right: 3vw;
+  body .container main output {
+    width: 40%;
   }
-  body .container .content main .billing {
-    width: 95%;
+  body .container main .billing {
+    width: 80%;
   }
-  body .container .content footer .extra-info .btn button {
-    width: 170px;
+  body .container footer .extra-info .btn button {
+    width: 60%;
   }
 }
 @media screen and (max-width: 670px) {
@@ -424,4 +404,4 @@ body .content footer .extra-info .btn button {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.cs.map */

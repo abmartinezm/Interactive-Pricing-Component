@@ -1,239 +1,103 @@
-// var slider = document.getElementById("range");
-// var output = document.getElementById("output");
-// var Dollars= document.getElementById("dollars");
-
-// var BtnRound = document.getElementById('btn');
-// // output.innerHTML = slider.value/1000; // Display the default slider value
-// var Total=8;
-// Dollars.value=Total.toFixed(2);
-// Update the current slider value (each time you drag the slider handle)
+const btnSwitch = document.querySelector('#checkbox');
+const spanSwitch = document.querySelector('#span-switch');
+const view = document.querySelector('#view');
+const price = document.getElementById('pricing__permonth-number');
+const slider = document.querySelector('#pricing-range');
+const btn = document.querySelector('.btn-submit');
+const Discount = document.querySelector('.dsc');
 
 
-/* ========================== § DOM ELEMENTS === */
-// Price
-const priceRangeEl = document.getElementById("price__range");
-const priceTimespanEl = document.getElementById("timespan");
-const priceEl = document.getElementById("price");
-const pageviewsEl = document.getElementById("pageviews");
 
-// Toggle
-const monthlyBillingEl = document.getElementById("monthly-billing");
-const yearlyBillingEl = document.getElementById("yearly-billing");
-const toggleElArr = [monthlyBillingEl, yearlyBillingEl];
+let active = false;
+let views = 10;
+let pricePerMount = 8;
+slider.value=20;
+ view.textContent = "10K pagesviews";
+    // printingPrice(8);
+    setBar(20);
 
-/* ========================== § DATA === */
-const prices = {
-  1: {
-    pageviews: "10k",
-    cost: 8,
-  },
-  2: {
-    pageviews: "50k",
-    cost: 12,
-  },
-  3: {
-    pageviews: "100k",
-    cost: 16,
-  },
-  4: {
-    pageviews: "500k",
-    cost: 24,
-  },
-  5: {
-    pageviews: "1M",
-    cost: 36,
-  },
-};
+view.textContent=`${views}K Pageviews`;
+price.innerHTML=`$${pricePerMount.toFixed(2)}`
 
-const price = class {
-  constructor(option, discount) {
-    this.option = option;
-    this.discount = discount;
-  }
 
-  get pageviews() {
-    return prices[this.option].pageviews + " Pageviews";
-  }
 
-  get cost() {
-    const costCalc = this.discount ? prices[this.option].cost * 0.75 : prices[this.option].cost;
-    return `${costCalc.toFixed(2)}`;
-  }
-};
+btnSwitch.addEventListener('click', ()=> {
+  active=!active;
 
-// monthlyBillingEl.addEventListener('click',()=>{
-//   console.log('btn')
-// })
+})
 
-/* ========================== § DISCOUNT CHECK === */
-function discountCheck() {
-  return yearlyBillingEl.checked;
+
+// Making slider work
+function setBar(value) {
+slider.style.setProperty("--value", value);
 }
 
-/* ========================== § OFFER SELECTED === */
-function offerSelected() {
-  return priceRangeEl.value;
-}
-
-/* ========================== § PERCENT SLIDER === */
-const numberOffers = priceRangeEl.max - priceRangeEl.min;
-const sliderPercent = () => (100 / numberOffers) * (offerSelected() - priceRangeEl.min);
-
-/* ========================== § UPDATE FUNCTION === */
-function updatePrice() {
-  const currentPrice = new price(offerSelected(), discountCheck());
-
-  pageviewsEl.innerText = currentPrice.pageviews;
-  priceEl.innerText = currentPrice.cost;
-  document.documentElement.style.setProperty("--gradient-slider-track", sliderPercent() + "%");
-}
-
-updatePrice();
-
-/* ========================== § EVENT LISTENER SLIDER === */
-priceRangeEl.addEventListener("input", function () {
-  updatePrice();
-});
-
-toggleElArr.forEach((el) => {
-  el.addEventListener("input", function () {
-    updatePrice();
-  });
-});
 
 
 
+// setBar(50);
+// slider.style.setProperty("--value", 50);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// slider.value=10000;
-// output.innerHTML=10;
-
-// slider.oninput = function() {
+function printingPrice(amount) {
   
-//   output.innerHTML = parseInt(this.value/1000);
-
-//     // console.log(slider.value )
-//     if(slider.value <=10000){
-//       Total=8;
-//       BtnRound.addEventListener('click',()=>{
-//         clickFunction()
-
-//       })
-      
-  
-//     }
-
-//     if(slider.value >=50000){
-//       Total=12;
-//       BtnRound.addEventListener('click',()=>{
-//         clickFunction()
-
-//       })
-
-//     }
-
-//     if(slider.value >=100000){
-//       Total=16;
-      
-//       BtnRound.addEventListener('click',()=>{
-//         clickFunction()
-
-//       })
-//     }
-
-//     if(slider.value >=500000){
-//       Total=24;
-//       BtnRound.addEventListener('click',()=>{
-//         clickFunction()
-
-//       })
-//     }
-
-//     if(slider.value >=1000000){
-//       Total=36;
-//       BtnRound.addEventListener('click',()=>{
-//         clickFunction()
-
-//       })
-//     }
-
+  if (active) {
+    Total=price.innerHTML=`$ ${amount.toFixed(2) - amount.toFixed(2) * (0.25)}`
+    Discount.classList.add('discount');
     
+    
+  } else {
+    price.innerHTML = `$ ${amount.toFixed(2)}`;
+    Discount.classList.remove('discount');
+  }
+}
 
-//     // console.log(Total)
+function printPageViews(view) {
+  view.textContent = `${view}k pagesview`;
+}
 
-//   Dollars.value=Total.toFixed(2);
- 
+slider.oninput = function () {
 
-  
-// } 
+if (Number(this.value) === 20) {
+    // printPageViews(10);
+    view.textContent = "10K pagesviews";
+    printingPrice(8);
+    setBar(20);
+  } else if (Number(this.value) === 40) {
+    // printPageViews(50);
+    view.textContent = "50K pagesviews";
+    printingPrice(12);
+    setBar(40);
+  } else if (Number(this.value) === 60) {
+    // printPageViews(100);
+    view.textContent = "100K pagesviews";
+    printingPrice(16);
+    setBar(60);
+  } else if (Number(this.value) === 80) {
+    // printPageViews(500);
+    view.textContent = "500K pagesviews";
+    printingPrice(24);
+    setBar(80);
+  } else if (Number(this.value) === 100) {
+    view.textContent = "1M pagesviews";
+    printingPrice(36);
+    setBar(100);
+  }
+};
 
-
-
-// var clickFunction = function () {
-
-//   Dollars.value=Total*.25;
-//   //do some stuff here
-//   window.addEventListener('click',clickFunction, false );
-
-// };
-// window.removeEventListener("click", clickFunction, false);
-
-
-
-// window.onload=function() {
-
-//     var input = document.getElementById('btn');
-//     var clickCounter = 0;
-//     input.onclick = function () {
-//         clickCounter++;
-//         if (clickCounter == 2) {
-//             window.alert("Hello");
-//             Dollars.value=""
-//         }
-//     };
-
+// Refreshing page on button click
+// function refreshPage() {
+//   window.location.reload();
 // }
+
+btn.addEventListener('click',()=>{
+  window.location.reload();
+})
+
+
+// Event handler
+btnSwitch.addEventListener("click", ()=>{
+  slider.oninput();
+});
+slider.addEventListener("click", function () {
+  slider.oninput();
+});

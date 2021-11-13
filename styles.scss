@@ -83,18 +83,24 @@ body {
 
         }
 
+       .content{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        position: relative;
+        padding: 10%;
         main {
-            label {
-                width: 100%;
+            #view {
+                width: 35%;
                 height: auto;
                 margin: 0 auto;
                 display: flex;
-                justify-content: center;
-                text-align: center;
+                justify-content: left;
+                text-align: left;
                 text-transform: uppercase;
+                float: left;
                 margin-bottom: 5vh;
                 font-size: 13px;
                 color: var(--Grayish-Blue);
+                // background-color: lightsteelblue;
             }
 
             .thousands{
@@ -126,6 +132,10 @@ body {
                 border-radius: 50%;
                 border: none;
                 background: var(--Strong-Cyan);
+                background-image: url('../images/icon-slider.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
                 cursor: pointer;
                 
             }
@@ -145,6 +155,15 @@ body {
 
             }
 
+            input::-webkit-slider-thumb:active {
+                background-color: var(--Soft-Cyan);
+            }
+
+            input::-moz-range-thumb:active {
+                background-color: var(--Soft-Cyan);
+            }
+
+
             input[type="range"]::-moz-range-progress {
                 height: 8px;
                 background-color: var(--Strong-Cyan); 
@@ -161,29 +180,35 @@ body {
             
 
             .output{
-                width: 60%;
+                width: 70%;
                 float: right;
                 // background-color: violet;
                 margin-top: -13vh;
                 height: auto;
                 display: flex;
+                position: relative;
                   align-items: center;
+                  margin-right: 5vw;
                
                 output {
-                    width: 60%;
+                    width: 100%;
                     //   background-color: violet;
+                    position: absolute;
+                    right: 0;
                     height: auto;
                     margin: 0 auto;
                     display: flex;
                     font-size: 30px;
                     margin-top: 0;
                     font-weight: 700;
+                   
                     
                 }
 
                 span{
-                    width: 50%;
-                   
+                    width: 15%;
+                    position: absolute;
+                    right: 0;
                     // background: lightgreen;
                 }
                 p{
@@ -194,6 +219,9 @@ body {
                     // background: lightcoral;
                     font-weight: 700;
                     margin-left: 28vw;
+                     visibility: hidden;
+                        
+                        color: red;
                 }
             }
 
@@ -304,6 +332,8 @@ body {
                     margin-left: 0;
                 }
 
+               
+
             }
 
 
@@ -354,21 +384,23 @@ body {
                     }
                 }
             }
+       }
         }
 
     // }
 
-    @media (min-width:501px) and (max-width:1600px) {
+    @media (min-width:570px) and (max-width:1600px) {
         .container{
-            width: 68%;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            margin-right: 10%;
-            margin-left: 10%;
+            width: 515px;
+            // margin-top: 5%;
+            // margin-bottom: 5%;
+            // margin-right: 28%;
+            // margin-left: 28%;
+            margin: 0 auto;
             // background: lightblue;
             header {
                 
-                margin-top: -16vh;
+                margin-top: -17vh;
                 width: 100%;
                 height: 28vh;
                 background-image: url('../images/pattern-circles.svg');
@@ -385,9 +417,17 @@ body {
                 
             }
 
+           .content{
+            //    padding: 5%;
+            //    background-color: lightcoral;
             main{
-                label{
-                    width: 15%;
+                // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                // background-color: lightgreen;
+                width: 100%;
+                height: auto;
+                #view{
+                    margin-top: 0;
+                    width: 35%;
                     float: left;
                     // background: lightcoral;
                     text-align: left;
@@ -396,48 +436,73 @@ body {
 
                
 
+               .output{
                 output{
-                    width: 25%;
-                    float: right;
+                    width: auto;
+                    // float: right;
+                    // margin-left: -23vw;
                     // margin-top: -10vh;
+                    // background: violet;
+                    right: 4vw;
+                    // position: absolute;
                 }
+
+                .month{
+                    width: auto;
+                    // background-color: lightsalmon;
+                    right: 0;
+                }
+
+            }
+           }
 
                 .billing{
-                    width: 35%;
-                }
-            }
-
-
-            footer{
-                
-                .extra-info{
-                    width: 100%;
-                    display: flex;
-                    // background: lightblue;
-
-                    p{
-                        width: 150%;
-                        text-align: left;
-
-                        svg{
-                            margin-right: 5%;
-                        }
-                        
-                    }
-
+                    width: 85%;
+                    // background-color: lightblue;
                     
                 }
 
-                .btn{
-                    width: 50%;
-                    margin-right: 0%;
-                    // background: lightcoral;
-                    button{
+
+
+                footer{
+                
+                    .extra-info{
+                        width: 100%;
+                        display: flex;
+                        // background: lightblue;
+    
+                        p{
+                            width: 120%;
+                            text-align: left;
+                            // background-color: lightgreen;
+    
+                            svg{
+                                margin-right: 5%;
+                                // background-color: lightslategray;
+                            }
+                            
+                        }
+    
+                        
+                    }
+    
+                    .btn{
+                        width: auto;
                         margin-right: 0%;
-                        width: 40%;
+                        font-size: 13px;
+                        // background: lightcoral;
+                        button{
+                            margin-right: 0%;
+                            width: 160px;
+                        }
                     }
                 }
-            }
+
+               }
+            
+
+
+           
             
         }
     }
@@ -448,6 +513,10 @@ body {
             main{
                 .billing{
                     width: 60%;
+
+                    .dsc.discount{
+                        background-color: rgb(255, 200, 163);
+                    }
                 }
             }
         }
@@ -455,24 +524,34 @@ body {
 
     @media screen and (max-width:1160px) {
         .container{
-            main{
+            // background-color: lightslategray;
+            .content{
+                main{
 
-                label{
-                    width: 15%;
-                    margin-left: 2vw;
+                    label{
+                        width: 15%;
+                        margin-left: 2vw;
+                        
+                    }
+    
+                    .output{
+
+                       margin-right: 2vw;
+                    //    background-color: lightsteelblue;
+
+                    
+
+                       .month{
+                       margin-right: -2vw;
+                        //    background-color: lightsteelblue;
+                       }
+                    }
+                    
+                        .billing{
+                            width: 90%;
+                        }
                     
                 }
-
-                .output{
-                    p{
-                        margin-right: 2vw;
-                    }
-                }
-                
-                    .billing{
-                        width: 50%;
-                    }
-                
             }
         }
     }
@@ -514,6 +593,7 @@ body {
                 }
             }
             
+          .content{
             main{
 
                 label{
@@ -522,14 +602,14 @@ body {
                     
                 }
 
+               .output{
                 output{
-                    width: 40%;
-                    
-                  
+                    margin-right: 3vw;
                 }
+               }
                 
                     .billing{
-                        width: 80%;
+                        width: 95%;
                     }
                 
             }
@@ -538,11 +618,12 @@ body {
                 .extra-info{
                     .btn{
                         button{
-                            width: 60%;
+                            width: 170px;
                         }
                     }
                 }
             }
+          }
         }
     }
 
